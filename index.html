@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ne Lin Aung | Cybersecurity & SysAdmin Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --accent-color: #2ea043;
+            --text-color: #c9d1d9;
+            --headline-color: #ffffff;
+            --border-color: #30363d;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        header {
+            text-align: center;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        h1 {
+            color: var(--headline-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-top: 0;
+        }
+        .bio {
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+        .section-title {
+            color: var(--headline-color);
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .card h3 {
+            color: var(--headline-color);
+            margin-top: 0;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: #8b949e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Ne Lin Aung</h1>
+            <h2>Junior Cybersecurity Specialist & System Administrator</h2>
+            <p class="bio">Passionate about Penetration Testing, SIEM Incident Response (ELK), and Linux System Hardening.</p>
+        </header>
+
+        <h3 class="section-title">Core Qualifications</h3>
+        <div class="card" style="margin-top: 20px;">
+            <ul>
+                <li><strong>NCC Level 3 Diploma in Computing</strong></li>
+                <li><strong>BNNTech Linux System Administration Certificate</strong></li>
+                <li><strong>Cisco Introduction to Cybersecurity</strong></li>
+                <li><strong>NCFE Level 3 Diploma in Ethical Hacking & Cyber Security</strong> (Enrolled)</li>
+                <li><strong>Creatigon Tier 1 SOC Analyst Certificate</strong></li>
+            </ul>
+        </div>
+
+        <h3 class="section-title">Technical Expertise</h3>
+        <div class="skills-grid">
+            <div class="card">
+                <h3>🐧 System Administration</h3>
+                <p>Linux (Ubuntu, Rocky Linux, Kali), Windows Server, VirtualBox Environments, Bash Automation.</p>
+            </div>
+            <div class="card">
+                <h3>🛡️ Cybersecurity & Pentesting</h3>
+                <p>Nmap, Wireshark, Nessus, Maltego, Metasploit, TryHackMe Labs.</p>
+            </div>
+            <div class="card">
+                <h3>🔍 SIEM & Forensics</h3>
+                <p>Elastic Stack (ELK 9.5.2), Sysmon, Windows Event Log Analysis, Incident Response.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 Ne Lin Aung • Hosted on GitHub Pages</p>
+        </footer>
+    </div>
+</body>
+</html>
