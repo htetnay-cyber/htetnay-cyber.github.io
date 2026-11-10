@@ -31,10 +31,20 @@
             padding-bottom: 40px;
             border-bottom: 1px solid var(--border-color);
         }
+        /* Profile Image Styling */
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            margin-bottom: 15px;
+            box-shadow: 0 0 15px rgba(46, 160, 67, 0.3);
+        }
         h1 {
             color: var(--headline-color);
             font-size: 2.5rem;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         h2 {
             color: var(--accent-color);
@@ -44,7 +54,7 @@
         }
         .bio {
             font-size: 1.1rem;
-            margin-top: 20px;
+            margin-top: 15px;
         }
         .section-title {
             color: var(--headline-color);
@@ -64,16 +74,50 @@
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 20px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        /* CSS Hover Effect for Cards */
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
         }
         .card h3 {
             color: var(--headline-color);
             margin-top: 0;
         }
-        ul {
-            padding-left: 20px;
+        .cert-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            background: #21262d;
+            padding: 10px 15px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
         }
-        li {
-            margin-bottom: 8px;
+        .cert-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        .cert-link:hover {
+            text-decoration: underline;
+        }
+        .btn-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 6px 12px;
+            background-color: #21262d;
+            color: var(--accent-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+        .btn-link:hover {
+            background-color: var(--accent-color);
+            color: #ffffff;
         }
         footer {
             text-align: center;
@@ -83,49 +127,58 @@
             font-size: 0.9rem;
             color: #8b949e;
         }
+
+        /* Profile Image Styling & Hover Effect */
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px rgba(46, 160, 67, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* ပုံလေး ချောမွေ့စွာ လှုပ်ရှားဖို့ */
+}
+
+/* Mouse တင်လိုက်တဲ့အခါ အကြွလေး ဖြစ်သွားမည့် ပုံစံ */
+.profile-img:hover {
+    transform: translateY(-5px); /* အပေါ်ကို 5 pixels လောက် ကြွသွားမယ် */
+    box-shadow: 0 5px 20px rgba(46, 160, 67, 0.5); /* အရိပ်လေး ပိုထင်ရှားလာမယ် */
+}
     </style>
 </head>
 <body>
     <div class="container">
         <header>
+            <!-- Profile Image (ကိုယ့်ရဲ့ ပုံဖိုင်နာမည်ကို profile.jpg လို့ ပေးပြီး Repository ထဲ တင်ပေးပါ) -->
+            <img src="profile.jpg" alt="Nay Lin Aung" class="profile-img">
             <h1>Nay Lin Aung</h1>
             <h2>Junior Cybersecurity Specialist & System Administrator</h2>
             <p class="bio">Passionate about Penetration Testing, SIEM Incident Response (ELK), and Linux System Hardening.</p>
         </header>
 
-        <h3 class="section-title">Core Qualifications</h3>
+        <h3 class="section-title">Core Qualifications & Certifications</h3>
         <div class="card" style="margin-top: 20px;">
-            <ul>
-                <li><strong>NCC Level 3 Diploma in Computing</strong></li>
-                <li><strong>BNNTech Linux System Administration Certificate</strong></li>
-                <li><strong>Cisco Introduction to Cybersecurity</strong></li>
-                <li><strong>NCFE Level 3 Diploma in Ethical Hacking & Cyber Security</strong> (Enrolled)</li>
-                <li><strong>Creatigon Tier 1 SOC Analyst Certificate</strong></li>
-            </ul>
-        </div>
-
-        <h3 class="section-title">Technical Expertise</h3>
-        <div class="skills-grid">
-            <div class="card">
-                <h3>🐧 System Administration</h3>
-                <p>Linux (Ubuntu, Rocky Linux, Kali), Windows Server, VirtualBox Environments, Bash Automation.</p>
+            <div class="cert-item">
+                <span>🛡️ <strong>NCC Level 3 Diploma in Computing</strong> (Twinkle College)</span>
             </div>
-            <div class="card">
-                <h3>🛡️ Cybersecurity & Pentesting</h3>
-                <p>Nmap, Wireshark, Nessus, Maltego, Metasploit, TryHackMe Labs.</p>
+            <div class="cert-item">
+                <span>🐧 <strong>BNNTech Linux System Administration Certificate</strong></span>
+                <a href="certificate-1.pdf" target="_blank" class="cert-link">📄 View Cert</a>
             </div>
-            <div class="card">
-                <h3>🔍 SIEM & Forensics</h3>
-                <p>Elastic Stack (ELK 9.5.2), Sysmon, Windows Event Log Analysis, Incident Response.</p>
+            <div class="cert-item">
+                <span>🔒 <strong>Cisco Introduction to Cybersecurity</strong></span>
+                <a href="certificate-2.pdf" target="_blank" class="cert-link">📄 View Cert</a>
+            </div>
+            <div class="cert-item">
+                <span>💻 <strong>NCFE Level 3 Diploma in Ethical Hacking & Cyber Security</strong> (Y-MAX College - Enrolled)</span>
+            </div>
+            <div class="cert-item">
+                <span>🚨 <strong>Creatigon Tier 1 SOC Analyst Training </strong></span>
             </div>
         </div>
 
-        <footer>
-            <p>© 2026 Ne Lin Aung • Hosted on GitHub Pages</p>
-        </footer>
-    </div>
-
-    <h3 class="section-title">Hands-on Labs & Investigation Reports</h3>
+        <h3 class="section-title">Hands-on Labs & Investigation Reports</h3>
         <div class="skills-grid">
             <div class="card">
                 <h3>🐧 Linux System Administration</h3>
@@ -134,7 +187,7 @@
             </div>
             <div class="card">
                 <h3>🛡️ Ethical Hacking & Pentesting</h3>
-                <p>Conducted footprinting, network scanning, and vulnerability assessments using Nmap, Nessus, Maltego and etc...with structured PDF assessment reports.</p>
+                <p>Conducted footprinting, network scanning, and vulnerability assessments using Nmap, Nessus, and Maltego against target environments.</p>
                 <a href="https://github.com/htetnay-cyber" target="_blank" class="btn-link">📄 View Assessment Report</a>
             </div>
             <div class="card">
@@ -143,5 +196,10 @@
                 <a href="https://github.com/htetnay-cyber" target="_blank" class="btn-link">🖼️ View Forensic Writeup & SS</a>
             </div>
         </div>
+
+        <footer>
+            <p>© 2026 Nay Lin Aung • Hosted on GitHub Pages</p>
+        </footer>
+    </div>
 </body>
 </html>
