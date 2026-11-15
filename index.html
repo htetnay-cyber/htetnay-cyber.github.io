@@ -218,17 +218,23 @@
             font-size: 0.9rem;
             color: #8b949e;
         }
-    </style>
-   #matrix-canvas {
+         #matrix-canvas {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -999; /* စာသားတွေနဲ့ အရာအားလုံးရဲ့ အနောက်ဆုံး အောက်ဘက် ရောက်သွားအောင်လို့ပါ */
+    z-index: -1;
+    background: #0d1117; /* Website ရဲ့ မူလ background အရောင်အတိုင်း ထည့်ပေးရန် */
     pointer-events: none;
-
 }
+        .cert-profile-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+    </style>
+
 </head>
 <body>
     <canvas id="matrix-canvas"></canvas>
@@ -311,6 +317,7 @@
         </div>
 
             </div>
+            <br> <br>
 
            
         <h3 class="section-title">Hands-on Labs & Investigation Reports</h3>
