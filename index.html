@@ -218,7 +218,7 @@
             font-size: 0.9rem;
             color: #8b949e;
         }
-        #matrix-canvas {
+       #matrix-canvas {
     position: fixed;
     top: 0;
     left: 0;
@@ -226,31 +226,32 @@
     height: 100vh;
     z-index: -999;
     background: #0d1117;
-    opacity: 0.3; /* Matrix code တွေကို မှေးမှေးဖျော့ဖျော့လေး ဖြစ်စေရန် (0.2 ကနေ 0.4 ထားနိုင်ပါတယ်) */
+    opacity: 0.3;
     pointer-events: none;
 }
-     /* Certificate များကို ဘေးချင်းယှဉ် Grid ပုံစံ ပေါ်စေရန် */
-/* 1. Hands-on Labs ခေါင်းစဉ် နေရာမှန်ကန်စေရန် */
-.section-title {
+
+/* Section ခေါင်းစဉ်များကို တစ်ကြောင်းတည်း ရှင်းလင်းစွာ ပေါ်စေရန် */
+.section-title, h2 {
     clear: both;
     width: 100%;
-    margin-top: 40px;
-    margin-bottom: 20px;
     display: block;
+    margin-top: 50px;
+    margin-bottom: 25px;
 }
 
-/* 2. Certificate Card များကို Labs card တွေလို Box ပုံစံ အရွယ်အစားတူ ညီညာစေရန် */
+/* Certificate များကို Grid ပုံစံ ညီညာစွာ ပြသရန် */
 .cert-profile-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 25px;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 40px auto;
+    clear: both;
 }
 
-/* Certificate တစ်ခုချင်းစီကို Labs card လိုမျိုး သပ်ရပ်သော Box card ပုံစံ ဖြစ်စေရန် */
-.cert-profile-wrapper > div {
+/* Certificate Card တစ်ခုချင်းစီ၏ ပုံစံ */
+.cert-profile-wrapper > div, .cert-container {
     background: #161b22;
     border: 1px solid #30363d;
     border-radius: 6px;
@@ -258,7 +259,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    box-sizing: border-box;
 }
 
 .cert-profile-wrapper img {
