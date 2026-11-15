@@ -219,8 +219,18 @@
             color: #8b949e;
         }
     </style>
+    #matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* အနောက်ဆုံး background မှာပဲ ပေါ်နေစေရန် */
+    pointer-events: none;
+}
 </head>
 <body>
+    <canvas id="matrix-canvas"></canvas>
 
     <!-- 1. ပြေးနေသော Banner စာတမ်း -->
     <div class="ticker-wrap">
@@ -234,6 +244,9 @@
 
     <div class="container">
         <header>
+            <div class="profile-container">
+    <img src="profile.jpg" alt="Nay Lin Aung" class="profile-img">
+</div>
             <!-- 2. အလှုပ်အခတ်ဖြင့် Glow ဖြစ်နေသော နာမည် -->
             <h1 class="animated-name">Nay Lin Aung</h1>
             <h2>Junior Cybersecurity Specialist & System Administrator</h2>
@@ -292,18 +305,13 @@
                 <span><strong>Creatigon Tier 1 SOC Analyst Training Certificate</strong></span>
             </div>
             <div style="margin-top: 10px;">
-                <img src="certificate-creatigon.jpg" alt="Creatigon SOC Analyst" style="width: 100%; max-width: 450px; border-radius: 6px; border: 1px solid #30363d;">
+                <img src="certificate-creatig.jpg" alt="Creatigon SOC Analyst" style="width: 100%; max-width: 450px; border-radius: 6px; border: 1px solid #30363d;">
             </div>
         </div>
 
             </div>
 
-            <!-- Profile Image (ညာဘက်ခြမ်း) -->
-            <div class="profile-container">
-                <img src="profile.jpg" alt="Nay Lin Aung" class="profile-img">
-            </div>
-        </div>
-
+           
         <h3 class="section-title">Hands-on Labs & Investigation Reports</h3>
         <div class="skills-grid">
             <div class="card">
@@ -327,5 +335,48 @@
             <p>© 2026 Nay Lin Aung • Hosted on GitHub Pages</p>
         </footer>
     </div>
+        <script>
+const canvas = document.getElementById('matrix-canvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const katakana = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()*&^%';
+const alphabet = katakana.split('');
+
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+
+const rainDrops = [];
+for (let x = 0; x < columns; x++) {
+    rainDrops[x] = 1;
+}
+
+function drawMatrix() {
+    ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = '#0F0';
+    ctx.font = fontSize + 'px monospace';
+
+    for (let i = 0; i < rainDrops.length; i++) {
+        const text = alphabet[Math.floor(Math.random() * alphabet.length)];
+        ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+
+        if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            rainDrops[i] = 0;
+        }
+        rainDrops[i]++;
+    }
+}
+
+setInterval(drawMatrix, 30);
+
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+</script>
 </body>
 </html>
