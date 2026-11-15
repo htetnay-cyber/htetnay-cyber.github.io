@@ -218,20 +218,29 @@
             font-size: 0.9rem;
             color: #8b949e;
         }
-         #matrix-canvas {
+        #matrix-canvas {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1;
-    background: #0d1117; /* Website ရဲ့ မူလ background အရောင်အတိုင်း ထည့်ပေးရန် */
+    z-index: -999;
+    background: #0d1117;
+    opacity: 0.3; /* Matrix code တွေကို မှေးမှေးဖျော့ဖျော့လေး ဖြစ်စေရန် (0.2 ကနေ 0.4 ထားနိုင်ပါတယ်) */
     pointer-events: none;
 }
-        .cert-profile-wrapper {
+     /* Certificate များကို ဘေးချင်းယှဉ် Grid ပုံစံ ပေါ်စေရန် */
+.cert-profile-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cert-container {
+    display: contents; /* Card တစ်ခုချင်းစီကို Grid အတိုင်း တန်းစီစေရန် */
 }
     </style>
 
@@ -343,17 +352,17 @@
             <p>© 2026 Nay Lin Aung • Hosted on GitHub Pages</p>
         </footer>
     </div>
-        <script>
+    <script>
 const canvas = document.getElementById('matrix-canvas');
 const ctx = canvas.getContext('2d');
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const katakana = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()*&^%';
+const katakana = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
 const alphabet = katakana.split('');
 
-const fontSize = 16;
+const fontSize = 24; // စာလုံးအရွယ်အစား ကြီးထား၍ ကျဲစေရန်
 const columns = canvas.width / fontSize;
 
 const rainDrops = [];
@@ -362,10 +371,10 @@ for (let x = 0; x < columns; x++) {
 }
 
 function drawMatrix() {
-    ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
+    ctx.fillStyle = 'rgba(13, 17, 23, 0.1)'; // နောက်ခံအမည်းရောင် ပျယ်သွားနှုန်း
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = '#0F0';
+    ctx.fillStyle = '#00FF66'; // Matrix အစိမ်းရောင်
     ctx.font = fontSize + 'px monospace';
 
     for (let i = 0; i < rainDrops.length; i++) {
@@ -379,12 +388,13 @@ function drawMatrix() {
     }
 }
 
-setInterval(drawMatrix, 30);
+setInterval(drawMatrix, 50); // အမြန်နှုန်း နှေးထားရန်
 
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 });
 </script>
+
 </body>
 </html>
