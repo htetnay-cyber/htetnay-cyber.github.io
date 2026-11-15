@@ -219,14 +219,15 @@
             color: #8b949e;
         }
     </style>
-    #matrix-canvas {
+   #matrix-canvas {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* အနောက်ဆုံး background မှာပဲ ပေါ်နေစေရန် */
+    width: 100vw;
+    height: 100vh;
+    z-index: -999; /* စာသားတွေနဲ့ အရာအားလုံးရဲ့ အနောက်ဆုံး အောက်ဘက် ရောက်သွားအောင်လို့ပါ */
     pointer-events: none;
+
 }
 </head>
 <body>
