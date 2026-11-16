@@ -239,23 +239,25 @@
     margin-bottom: 25px;
 }
 
-/* Certificate များကို Grid ပုံစံ ညီညာစွာ ပြသရန် */
+
+
+/* 1. Certificate များကို အလယ်အလတ် အရွယ်အစားနှင့် ညီညာစွာ ပြသရန် */
 .cert-profile-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto 40px auto;
     clear: both;
 }
 
-/* HTML ထဲပါသည့် .cert-item ကို Grid Box ပုံစံ ဖြစ်စေရန် */
+/* 2. Certificate Card တစ်ခုချင်းစီ၏ ပုံစံ */
 .cert-item {
     background: #161b22;
     border: 1px solid #30363d;
     border-radius: 6px;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -263,8 +265,10 @@
     box-sizing: border-box;
 }
 
+/* 3. ပုံအရွယ်အစားကို ကဒ်အတွင်း၌သာ အလယ်အလတ် အနေအထားဖြင့် အံဝင်ခွင်ကျ ဖြစ်စေရန် */
 .cert-profile-wrapper img {
     width: 100%;
+    max-width: 100%;
     height: auto;
     border-radius: 4px;
     margin-top: 10px;
