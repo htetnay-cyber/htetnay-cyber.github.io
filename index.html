@@ -239,40 +239,63 @@
     margin-bottom: 25px;
 }
 
-
-
-/* 1. Certificate များကို အလယ်အလတ် အရွယ်အစားနှင့် ညီညာစွာ ပြသရန် */
 .cert-profile-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     width: 100%;
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto 40px auto;
     clear: both;
 }
 
-/* 2. Certificate Card တစ်ခုချင်းစီ၏ ပုံစံ */
-.cert-item {
+.cert-item-row {
     background: #161b22;
     border: 1px solid #30363d;
     border-radius: 6px;
-    padding: 15px;
+    padding: 12px 20px;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    box-sizing: border-box;
+    align-items: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
 }
 
-/* 3. ပုံအရွယ်အစားကို ကဒ်အတွင်း၌သာ အလယ်အလတ် အနေအထားဖြင့် အံဝင်ခွင်ကျ ဖြစ်စေရန် */
-.cert-profile-wrapper img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-top: 10px;
+.cert-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #c9d1d9;
+    font-size: 0.95rem;
 }
+
+.project-dropdown {
+    margin-top: 15px;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    padding-left: 10px;
+    border-left: 2px solid #30363d;
+}
+
+.sub-link {
+    color: #58a6ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.sub-link:hover {
+    background: #21262d;
+    text-decoration: underline;
+}
+
+
     </style>
 
 </head>
@@ -305,80 +328,100 @@
         <div class="cert-profile-wrapper">
             <div class="cert-container card">
                 
-             <!-- 3. ပုံထည့်၍ ရသော Certificate ရလဒ်များ -->
+           <!-- Core Qualifications & Certifications -->
+<h3 class="section-title">Core Qualifications & Certifications</h3>
 <div class="cert-profile-wrapper">
     
-    <div class="cert-item">
+    <div class="cert-item-row">
         <div class="cert-info">
-            <span style="font-size:1.4rem;">🏆</span>
+            <span>🏆</span>
             <span><strong>NCC Level 3 Diploma in Computing</strong> (Twinkle College)</span>
         </div>
-        <div style="margin-top: 10px;">
-            <img src="certificate-nccl3.jpg" alt="NCC Level 3 Diploma" style="width: 100%; max-width: 450px; border-radius: 6px;">
-        </div>
+        <a href="certificate-nccl3.jpg" target="_blank" class="btn-link">📄 View Cert</a>
     </div>
 
-    <div class="cert-item">
+    <div class="cert-item-row">
         <div class="cert-info">
-            <span style="font-size:1.4rem;">🐧</span>
+            <span>🐧</span>
             <span><strong>BNNTech Linux System Administration Certificate</strong></span>
         </div>
-        <div style="margin-top: 10px;">
-            <img src="certificate-bnntech.jpg" alt="BNNTech Linux Admin" style="width: 100%; max-width: 450px; border-radius: 6px;">
-        </div>
+        <a href="certificate-bnntech.jpg" target="_blank" class="btn-link">📄 View Cert</a>
     </div>
 
-    <div class="cert-item">
+    <div class="cert-item-row">
         <div class="cert-info">
-            <span style="font-size:1.4rem;">🔒</span>
+            <span>🔒</span>
             <span><strong>Cisco Introduction to Cybersecurity</strong></span>
         </div>
-        <div style="margin-top: 10px;">
-            <img src="certificate-cisco.jpg" alt="Cisco Cybersecurity" style="width: 100%; max-width: 450px; border-radius: 6px;">
-        </div>
+        <a href="certificate-cisco.jpg" target="_blank" class="btn-link">📄 View Cert</a>
     </div>
 
-    <div class="cert-item">
+    <div class="cert-item-row">
         <div class="cert-info">
-            <span style="font-size:1.4rem;">🛡️</span>
+            <span>🛡️</span>
             <span><strong>NCFE Level 3 Diploma in Ethical Hacking & Cyber Security</strong> (Y-MAX College)</span>
         </div>
-        <div style="margin-top: 10px;">
-            <img src="certificate-ncfe.jpg" alt="NCFE Ethical Hacking" style="width: 100%; max-width: 450px; border-radius: 6px;">
-        </div>
+        <a href="certificate-ncfe.jpg" target="_blank" class="btn-link">📄 View Cert</a>
     </div>
 
-    <div class="cert-item">
+    <div class="cert-item-row">
         <div class="cert-info">
-            <span style="font-size:1.4rem;">⭐</span>
+            <span>⭐</span>
             <span><strong>Creatigon Tier 1 SOC Analyst Training Certificate</strong></span>
         </div>
-        <div style="margin-top: 10px;">
-            <img src="certificate-creatig.jpg" alt="Creatigon SOC Analyst" style="width: 100%; max-width: 450px; border-radius: 6px;">
-        </div>
+        <a href="certificate-creatig.jpg" target="_blank" class="btn-link">📄 View Cert</a>
     </div>
 
-</div> <!-- cert-profile-wrapper အပိတ် tag -->
+</div>
 
            
-        <h3 class="section-title">Hands-on Labs & Investigation Reports</h3>
-        <div class="skills-grid">
-            <div class="card">
-                <h3>🐧 Linux System Administration</h3>
-                <p>Configured VirtualBox VMs (Ubuntu, Rocky Linux, Kali), local networking, and automated administrative tasks using custom Bash scripts.</p>
-                <a href="linux-lab.pdf" target="_blank" class="btn-link">Start Projects &rarr;</a>
+       <h3 class="section-title">Hands-on Labs & Investigation Reports</h3>
+<div class="skills-grid">
+    
+    <!-- 1. Linux System Administration -->
+    <div class="card">
+        <h3>🐧 Linux System Administration</h3>
+        <p>Configured VirtualBox VMs (Ubuntu, Rocky Linux, Kali), local networking, and automated administrative tasks using custom Bash scripts.</p>
+        
+        <!-- Project များကို ရွေးချယ်နိုင်သော Dropdown ပုံစံ -->
+        <details class="project-dropdown">
+            <summary class="btn-link" style="cursor: pointer; list-style: none;">Start Projects &rarr;</summary>
+            <div class="project-list">
+                <a href="linux-lab.pdf" target="_blank" class="sub-link">📁 Project 1: VM & Bash Automation</a>
+                <a href="linux-project2.pdf" target="_blank" class="sub-link">📁 Project 2: Network Configuration</a>
             </div>
-            <div class="card">
-                <h3>🛡️ Ethical Hacking & Pentesting</h3>
-                <p>Conducted footprinting, network scanning, and vulnerability assessments using Nmap, Nessus, and Maltego against target environments.</p>
-                <a href="My-projest(Pentest).pdf" target="_blank" class="btn-link">Start Projects &rarr;</a>
+        </details>
+    </div>
+
+    <!-- 2. Ethical Hacking & Pentesting -->
+    <div class="card">
+        <h3>🎯 Ethical Hacking & Pentesting</h3>
+        <p>Conducted footprinting, network scanning, and vulnerability assessments using Nmap, Nessus, and Maltego against target environments.</p>
+        
+        <details class="project-dropdown">
+            <summary class="btn-link" style="cursor: pointer; list-style: none;">Start Projects &rarr;</summary>
+            <div class="project-list">
+                <a href="My-projest(Pentest).pdf" target="_blank" class="sub-link">📁 Project 1: Penetration Testing Report</a>
+                <a href="pentest-project2.pdf" target="_blank" class="sub-link">📁 Project 2: Vulnerability Assessment</a>
             </div>
-            <div class="card">
-                <h3>🚨 SOC Analyst & SIEM Investigation</h3>
-                <p>Analyzed Windows Event logs, PowerShell executions, LOLBins, and BITS jobs using Elastic Stack (ELK) and Sysmon telemetry.</p>
-                <a href="soc-lab.pdf" target="_blank" class="btn-link">Start Projects &rarr;</a>
+        </details>
+    </div>
+
+    <!-- 3. SOC Analyst & SIEM Investigation -->
+    <div class="card">
+        <h3>🛡️ SOC Analyst & SIEM Investigation</h3>
+        <p>Analyzed Windows Event logs, PowerShell executions, LOLBins, and BITS jobs using Elastic Stack (ELK) and Sysmon telemetry.</p>
+        
+        <details class="project-dropdown">
+            <summary class="btn-link" style="cursor: pointer; list-style: none;">Start Projects &rarr;</summary>
+            <div class="project-list">
+                <a href="soc-lab.pdf" target="_blank" class="sub-link">📁 Project 1: SIEM Log Analysis</a>
+                <a href="soc-project2.pdf" target="_blank" class="sub-link">📁 Project 2: Incident Response Report</a>
             </div>
-        </div>
+        </details>
+    </div>
+
+</div>
 
         <footer>
             <p>© 2026 Nay Lin Aung • Hosted on GitHub Pages</p>
